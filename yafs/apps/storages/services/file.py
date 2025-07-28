@@ -90,9 +90,7 @@ class FileService:
         """
         Возвраащем для него поток на чтение.
         """
-        async for chunk in self.file_storage_repository.straming_read(
-            self.get_path(file_schema.id)
-        ):
+        async for chunk in self.file_storage_repository.straming_read(self.get_path(file_schema.id)):
             yield chunk
 
     async def delete(self: Self, files_id: list[uuid.UUID]) -> bool:
@@ -105,10 +103,7 @@ class FileService:
             await self.file_repository.delete([file.id for file in files])
             semaphore = asyncio.BoundedSemaphore(4)
             await asyncio.gather(
-                *[
-                    self.file_storage_delete(self.get_path(file.id), semaphore=semaphore)
-                    for file in files
-                ]
+                *[self.file_storage_delete(self.get_path(file.id), semaphore=semaphore) for file in files]
             )
             return True
 

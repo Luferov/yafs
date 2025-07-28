@@ -13,9 +13,7 @@ from ..services import FileService
 class UploadFilesUseCase:
     file_service: FileService
 
-    async def __call__(
-        self: Self, storage_id: uuid.UUID, files: list[UploadFile]
-    ) -> list[FileReadSchema]:
+    async def __call__(self: Self, storage_id: uuid.UUID, files: list[UploadFile]) -> list[FileReadSchema]:
         files_schema = [
             FileUploadSchema(
                 name=file.filename,

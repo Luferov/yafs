@@ -1,5 +1,4 @@
 import typer
-
 from fast_clean.cli import use_cryptography, use_load_seed
 
 from yafs.apps.storages.commands import add_s3_storage
