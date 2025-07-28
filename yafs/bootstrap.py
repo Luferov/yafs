@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 from fast_clean.container import ContainerManager
 from fast_clean.exceptions import use_exceptions_handlers
 from fast_clean.middleware import use_middleware
+from fast_clean.contrib.monitoring.middleware import use_middleware as use_monitoring_middleware
 from fast_clean.utils.toml import use_toml_info
 from fast_clean.loggers import use_logging
 from fast_clean.contrib.logging.sentry import use_sentry
@@ -48,6 +49,7 @@ def create_app(use_routes: Iterable[Callable[[FastAPI], None]]) -> FastAPI:
     use_sentry(settings.sentry_dsn)
 
     use_middleware(app, project_info.name, settings.cors_origins)
+    use_monitoring_middleware(app)
     use_exceptions_handlers(app, settings)
     use_storage_exception_handlers(app, settings)
 
