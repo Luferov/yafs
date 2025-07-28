@@ -1,7 +1,7 @@
 [project]
-name = "fastapi-boilerplate"
+name = "yafs"
 version = "0.1.0"
-description = "FastAPI boilerplate"
+description = "Yet another file storage service"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
