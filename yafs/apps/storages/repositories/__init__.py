@@ -1,0 +1,4 @@
+from .file import FileDbRepository as FileDbRepository
+from .file_storage_provider import FileStorageProviderRepositoryFactory as FileStorageProviderRepositoryFactory
+from .file_storage_provider import FileStorageRepositoryProtocol as FileStorageRepositoryProtocol
+from .storage import StorageDbRepository as StorageDbRepository

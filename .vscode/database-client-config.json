@@ -1,0 +1,45 @@
+{
+    "nosql": {
+        "1753726429489": {
+            "host": "minio",
+            "port": 9000,
+            "dbType": "S3",
+            "advance": {
+                "idleConfig": {
+                    "enable": true
+                },
+                "hideSystemSchema": true,
+                "groupingTables": false,
+                "loadMetaDataWhenExpandTreeView": true
+            },
+            "treeFeatures": [],
+            "usingSSH": false,
+            "useSocksProxy": false,
+            "useHTTPProxy": false,
+            "global": false,
+            "savePassword": "Forever",
+            "readonly": false,
+            "sort": 12,
+            "group": "FS",
+            "useSSL": false,
+            "fs": {
+                "encoding": "utf8",
+                "showHidden": true
+            },
+            "s3": {
+                "accessKey": "admin",
+                "accessSecret": "12345678",
+                "pathStyle": true,
+                "region": "us-west-1",
+                "serviceIds": [
+                    "openSource",
+                    "minio"
+                ],
+                "useSSL": false
+            },
+            "key": "1753726429489",
+            "connectionKey": "nosql.connections"
+        }
+    },
+    "$schema": "https://cdn.database-client.com/dbclient/schema.json"
+}

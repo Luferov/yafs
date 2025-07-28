@@ -1,0 +1,40 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Python 3",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"dockerComposeFile": "../docker-compose.yaml",
+	"service": "devcontainer",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"features": {
+		"ghcr.io/va-h/devcontainers-features/uv:1": {}
+	},
+	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+	"forwardPorts": [8000, 5678],
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.analysis.typeCheckingMode": "strict",
+				"python.testing.unittestEnabled": false,
+				"python.testing.pytestEnabled": true
+			},
+			"extensions": [
+				"tamasfe.even-better-toml",
+				"ms-python.debugpy",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-python.autopep8",
+				"ms-azuretools.vscode-docker",
+				"spmeesseman.vscode-taskexplorer",
+				"njpwerner.autodocstring",
+				"cweijan.vscode-database-client2",
+				"cweijan.dbclient-jdbc"
+			]
+		}
+	},
+	"remoteEnv": {
+		"UV_LINK_MODE": "copy",
+		"PYDEVD_DISABLE_FILE_VALIDATION": "1"
+	},
+	"shutdownAction": "stopCompose"
+}
